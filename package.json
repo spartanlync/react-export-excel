@@ -3,6 +3,7 @@
   "version": "0.5.3",
   "main": "dist/index.js",
   "description": "A tool to export dataset from react to excel format.",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/spartanlync/react-export-excel.git"
@@ -25,8 +26,11 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.25.8",
+    "@babel/preset-react": "^7.25.7",
     "@commitlint/cli": "6.1.3",
     "@commitlint/config-conventional": "6.1.3",
+    "@eslint/js": "^9.13.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.0.1",
@@ -38,7 +42,7 @@
     "cross-env": "5.1.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
-    "eslint": "4.8.0",
+    "eslint": "^4.8.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jest": "21.14.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
@@ -62,7 +66,7 @@
     "coverage:html": "nyc report --reporter=html",
     "coverage:publish": "nyc report --reporter=lcov | codecov",
     "clean": "rm -rf ./dist && mkdir ./dist",
-    "build": "npm run test && babel src --out-dir dist",
+    "build": "babel src --out-dir dist",
     "build:watch": "babel -w src --out-dir dist",
     "lint": "eslint .",
     "lint:watch": "esw -w lib/**",
